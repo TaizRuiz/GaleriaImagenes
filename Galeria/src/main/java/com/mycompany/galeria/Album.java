@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.galeria;
+import java.util.ArrayList;
+
 
 /**
  *
@@ -46,4 +48,8 @@ public class Album {
     public void setFotoContenidas(ArrayList<Foto> fotoContenidas) {
         this.fotoContenidas = fotoContenidas;
     }
+    
+    public int compareTo(Album a){
+    return this.nombre.compareTo(a.nombre);
+  }
 }
