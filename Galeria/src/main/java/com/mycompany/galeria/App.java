@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * JavaFX App
  */
-// Kevin Magallanes
+// Kevin Magallanes 10
 public class App extends Application {
 
     private static Scene scene;
