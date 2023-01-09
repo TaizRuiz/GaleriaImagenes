@@ -1,0 +1,45 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 6 ene 2023, 10:02:14
+    Author     : USUARIO
+*/
+.labelInicio{
+        -fx-font-size: 45 pt;
+        -fx-align-content: center;
+        -fx-text-fill: linear-gradient(to bottom, orange,red, purple);
+        -fx-font-weight: BOLD;
+        -fx-font-family: Calibri;
+        -fx-font-style: italic;
+     }
+.imagenFondo{
+    -fx-background-color: linear-gradient(to bottom, orange,red, purple);
+     }
+.labelUser{
+         -fx-font-size:  10pt;
+        -fx-align-content: center;
+        -fx-text-fill: linear-gradient(to bottom, orange,red, purple);
+        -fx-font-weight: BOLD;
+        -fx-font-family: Calibri;
+        -fx-font-style: italic;
+     }
+.btnInicio{
+    -fx-display: inline-block;
+    -fx-cursor: pointer;
+    -fx-box-shadow: 0 9px #999;
+    -fx-border-radius: 8px;
+    -fx-background-color: grey;
+    -fx-font-size: 12px;
+    -fx-text-align: center;
+    
+    
+     }
+.btnInicio:hover{
+    -fx-background-color: #3e8e41;
+    
+    
+     }
+
+

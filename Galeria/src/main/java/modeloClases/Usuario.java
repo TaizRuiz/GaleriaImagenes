@@ -2,50 +2,62 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.galeria;
+package modeloClases;
+
+import java.io.Serializable;
 
 /**
  *
- * @author Kevin Magallanes
+ * @author USUARIO
  */
-public class Usuario extends Persona {
-    private String nomUsuario;
-    private String contraseña;
-    
-    public Usuario(String nomUsuario, String contraseña, String nombre, String apellido){
-        super(nombre, apellido);
-        this.nomUsuario = nomUsuario;
-        this.contraseña = contraseña;
+public class Usuario  implements Serializable{
+    String nomUser;
+    String passW;
+    String nombre;
+
+    public Usuario(String nomUser, String passW) {
+        this.nomUser = nomUser;
+        this.passW = passW;
+        
     }
-    public Usuario(String nombre,String apellido){
-        super(nombre, apellido);
+    public Usuario(String nomUser, String passW,String nom) {
+       this(nomUser, passW);
+        this.nombre=nom;
     }
-    @Override
+
+    public String getNomUser() {
+        return nomUser;
+    }
+
+    public void setNomUser(String nomUser) {
+        this.nomUser = nomUser;
+    }
+
+    public String getPassW() {
+        return passW;
+    }
+
+    public void setPassW(String passW) {
+        this.passW = passW;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+     @Override
      public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
         if (obj != null && obj instanceof Usuario) {
-            Usuario otroUsuario=(Usuario) obj;
-            return (otroUsuario.nomUsuario.equals(this.nomUsuario)&& otroUsuario.contraseña.equals(this.contraseña)) ;
+            Usuario otraPersona=(Usuario) obj;
+            return (this.nomUser.equals(otraPersona.nomUser)&& this.passW.equals(otraPersona.passW)) ;
         }
         return false;
     }
 
-    public String getNomUsuario() {
-        return nomUsuario;
-    }
-
-    public void setNomUsuario(String nomUsuario) {
-        this.nomUsuario = nomUsuario;
-    }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
-    
 }

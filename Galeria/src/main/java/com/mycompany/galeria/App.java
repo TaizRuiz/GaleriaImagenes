@@ -1,5 +1,7 @@
 package com.mycompany.galeria;
 
+import modeloClases.Galeria;
+import modeloClases.Usuario;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import javafx.application.Application;
@@ -12,7 +14,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import modeloClases.*;
+import modeloClases.Album;
+import modeloClases.Foto;
 
 /**
  * JavaFX App
@@ -22,12 +25,35 @@ public class App extends Application {
 
     public static ArrayList<Galeria> galeriasApp=new ArrayList<>();
 
-    @Override
-    public void start(Stage stage) throws IOException {
-        
+    public static ArrayList<Galeria> getGaleriasApp() {
+        return galeriasApp;
     }
 
-   
+    
+   private static Scene scene;
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        ArrayList<Album> a=new ArrayList<>();
+        Album a1=new Album("a1","d1");
+        a1.getFotoContenidas().add(new Foto("t1", "f1","l1", "a1", "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\GaleriaImagenes\\Galeria\\src\\main\\java\\imagenes\\5.jpg"));
+        a.add(a1);
+        Galeria g1=new Galeria(new Usuario("user1","user1"),a);
+        galeriasApp.add(g1);
+        
+        scene = new Scene(loadFXML("inicioSesionVista"), 640, 480);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    static void setRoot(String fxml) throws IOException {
+        scene.setRoot(loadFXML(fxml));
+    }
+
+    private static Parent loadFXML(String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource( fxml + ".fxml"));
+        return fxmlLoader.load();
+    }
 
     public static void main(String[] args) {
         launch();

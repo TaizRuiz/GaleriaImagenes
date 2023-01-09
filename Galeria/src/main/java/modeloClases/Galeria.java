@@ -2,7 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.galeria;
+package modeloClases;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,8 +40,9 @@ public class Galeria implements Serializable{
             return (otroGaleria.getOwner().equals(this.owner)) ;
         }
         return false;
-    }
-
+    
+     
+}
     public Usuario getOwner() {
         return owner;
     }
@@ -66,19 +72,6 @@ public class Galeria implements Serializable{
     }
     
     
-    public void añadirFoto(Foto f, Album a){
-        if (this.albumnesGaleria.contains(a)){
-            if (!(a.getFotoContenidas().contains(f))){
-                a.getFotoContenidas().add(f);
-            }
-            else{
-                System.out.println("La foto ya existe en el album seleccionado");
-            }
-        }
-        else{
-            System.out.println("El album ingresado no existe");
-        }
-    }
     
     public void mostraAlbumnes(){
         for (Album ab: this.albumnesGaleria){

@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.galeria;
+package modeloClases;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -16,8 +17,12 @@ public class Album implements Serializable, Comparable<Album>{
     private String descripcion;
     private ArrayList<Foto> fotoContenidas;
     public Album(String nombre,String descripcion){
-        this.nombre=nombre;
+       this(nombre);
         this.descripcion=descripcion;
+        this.fotoContenidas=new ArrayList<>();
+    }
+     public Album(String nombre){
+       this.nombre=nombre;
     }
     public Album(String nombre,String descripcion,ArrayList<Foto> fotoContenidas){
         this(nombre, descripcion);
@@ -31,7 +36,7 @@ public class Album implements Serializable, Comparable<Album>{
         }
         if (obj != null && obj instanceof Album) {
             Album otroAlbum=(Album) obj;
-            return (otroAlbum.nombre.equals(this.nombre)&& otroAlbum.descripcion.equals(this.descripcion)) ;
+            return (otroAlbum.nombre.equals(this.nombre)) ;
         }
         return false;
     }
@@ -53,7 +58,7 @@ public class Album implements Serializable, Comparable<Album>{
     }
 
     public ArrayList<Foto> getFotoContenidas() {
-        return fotoContenidas;
+        return this.fotoContenidas;
     }
 
     public void setFotoContenidas(ArrayList<Foto> fotoContenidas) {

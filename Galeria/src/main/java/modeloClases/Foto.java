@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.galeria;
+package modeloClases;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -69,7 +72,7 @@ public class Foto implements Serializable{
     }
 
     public ArrayList<Persona> getPersonasReconocidas() {
-        return personasReconocidas;
+        return this.personasReconocidas;
     }
 
     public void setPersonasReconocidas(ArrayList<Persona> personasReconocidas) {
@@ -111,5 +114,8 @@ public class Foto implements Serializable{
     public String toString() {
         return  "titulo=" + titulo + ", fecha=" + fecha + ", lugar=" + lugar + ", nombreAlbum=" + nombreAlbum + ", personasReconocidas=" + personasReconocidas + ", ruta=" + ruta;
     }
+    
+    
+        
     
 }
