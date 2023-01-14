@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.mycompany.galeria.VistaContenidoAlbumController">
+   <children>
+      <BorderPane fx:id="contenedorP" layoutX="13.0" layoutY="14.0" prefHeight="372.0" prefWidth="587.0">
+         <bottom>
+            <HBox fx:id="contenedorBotones" prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="BtnNuevaFoto" mnemonicParsing="false" onAction="#agregarImagen" text="Agregar" />
+                  <Button fx:id="btnEliminar" mnemonicParsing="false" text="Eliminar" />
+               </children>
+               <padding>
+                  <Insets left="200.0" top="50.0" />
+               </padding>
+            </HBox>
+         </bottom>
+         <center>
+            <FlowPane fx:id="contenedorFotos" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

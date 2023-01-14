@@ -22,8 +22,10 @@ import modeloClases.Foto;
  */
 // Kevin Magallanes 101
 public class App extends Application {
-
+    
+    public static Album albumSelec=null;
     public static ArrayList<Galeria> galeriasApp=new ArrayList<>();
+    public static Galeria galeriaSeleccionada=null;
 
     public static ArrayList<Galeria> getGaleriasApp() {
         return galeriasApp;
@@ -36,9 +38,14 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         ArrayList<Album> a=new ArrayList<>();
         Album a1=new Album("a1","d1");
-        a1.getFotoContenidas().add(new Foto("t1", "f1","l1", "a1", "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\GaleriaImagenes\\Galeria\\src\\main\\java\\imagenes\\5.jpg"));
+        a1.getFotoContenidas().add(new Foto("t1", "f1","l1", "a1", "file:C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\GaleriaImagenes\\Galeria\\src\\main\\java\\imagenes\\5.jpg"));
+        a1.getFotoContenidas().add(new Foto("t4", "f1","l1", "a1", "file:C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\GaleriaImagenes\\Galeria\\src\\main\\java\\imagenes\\4.jpg"));
+        a1.getFotoContenidas().add(new Foto("t4", "f1","l1", "a1", "file:C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\GaleriaImagenes\\Galeria\\src\\main\\java\\imagenes\\1.jpg"));
         a.add(a1);
         Galeria g1=new Galeria(new Usuario("user1","user1"),a);
+         Album a2=new Album("a2","d2");
+         a2.getFotoContenidas().add(new Foto("t2", "f3","l1", "a2", "file:C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\GaleriaImagenes\\Galeria\\src\\main\\java\\imagenes\\3.jpg"));
+        a.add(a2);
         galeriasApp.add(g1);
         
         scene = new Scene(loadFXML("inicioSesionVista"), 640, 480);
