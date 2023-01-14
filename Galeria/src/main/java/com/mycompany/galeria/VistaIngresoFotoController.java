@@ -18,6 +18,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import modeloClases.Album;
@@ -87,17 +89,13 @@ public class VistaIngresoFotoController implements Initializable {
                     personas.add(new Persona(p));
                 }
             }
-            Foto nuevaFoto=new Foto(titulo, fecha, lugar, null, ruta, personas);
+            Foto nuevaFoto=new Foto(titulo, fecha, lugar, App.albumSelec.getNombre(), ruta, personas);
             try{
                 FXMLLoader loader=new FXMLLoader(getClass().getResource("VistaContenidoAlbum.fxml"));
                   Parent root=loader.load(); 
                      VistaContenidoAlbumController controlador=loader.getController();
                      Album album=App.albumSelec;
                      controlador.cargarNuevaImagen(nuevaFoto);
-                     controlador.vaciar();
-                     
-                     controlador.llenarContenedor(album);
-                     
                      Scene scene=(Scene) btnGuardar.getScene();
                      Stage s=(Stage) scene.getWindow();
                      s.close();

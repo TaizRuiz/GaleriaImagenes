@@ -56,6 +56,7 @@ FlowPane contenedorFotos;
             agregarImagen(evento);
         }
         
+    
     }
     @FXML
     public void agregarImagen(ActionEvent evento){
@@ -63,12 +64,13 @@ FlowPane contenedorFotos;
                  FXMLLoader loader=new FXMLLoader(getClass().getResource("VistaIngresoFoto.fxml"));
                   Parent root=loader.load(); 
                      VistaIngresoFotoController controlador=loader.getController();
-          
+                       this.contenedorFotos.getChildren().clear();
                        Scene s=new Scene(root);
                        Stage stage=new Stage();
                        stage.initModality(Modality.APPLICATION_MODAL);
                        stage.setScene(s);
                        stage.showAndWait();
+                       this.llenarContenedor(App.albumSelec);
                 
             }catch(Exception e){
                 
