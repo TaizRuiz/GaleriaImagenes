@@ -2,24 +2,36 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane fx:id="contenedorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.galeria.VentaPrincipalGaleriaController">
+<BorderPane fx:id="contenedorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.galeria.VentaPrincipalGaleriaController">
    <top>
-      <HBox fx:id="contenedorBuscador" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+      <HBox fx:id="contenedorBuscador" prefHeight="100.0" prefWidth="646.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
+            <ImageView fx:id="flechaRegreso" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="C:\Users\USUARIO\OneDrive\Documentos\GitHub\GaleriaImagenes\Galeria\src\main\java\imagenes\flecha.png" />
+               </image>
+            </ImageView>
             <TextField fx:id="buscador" prefHeight="26.0" prefWidth="329.0" />
+            <ComboBox fx:id="coomboOpcionesBusqueda" onAction="#obtnerTipoBusqueda" prefWidth="150.0" promptText="Buscar por:">
+            </ComboBox>
+
             <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscarFoto" prefHeight="30.0" prefWidth="96.0" text="Buscar" />
+            <Button fx:id="btnNuevoAlbum" mnemonicParsing="false" prefHeight="30.0" prefWidth="106.0" text="Nuevo Album" />
          </children>
          <padding>
-            <Insets left="50.0" top="20.0" />
+            <Insets left="25.0" top="20.0" />
          </padding>
       </HBox>
    </top>
    <center>
-      <AnchorPane fx:id="contenedorAlbumes" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <AnchorPane fx:id="contenedorAlbumes" prefHeight="300.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

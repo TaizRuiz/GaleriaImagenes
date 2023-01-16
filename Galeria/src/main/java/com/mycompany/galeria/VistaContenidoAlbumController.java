@@ -107,7 +107,7 @@ FlowPane contenedorFotos;
                 String rutaFoto=f.getRuta();
                 System.out.println(rutaFoto);
                 ImageView image=new ImageView();
-                Image img=new Image(rutaFoto, 200, 200, false, false);
+                Image img=new Image(rutaFoto, 150, 150, false, false);
             
                 image.setImage(img);
                 this.contenedorFotos.getChildren().add(image);

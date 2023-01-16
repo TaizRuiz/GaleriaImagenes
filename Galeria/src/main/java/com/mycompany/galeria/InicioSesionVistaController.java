@@ -81,10 +81,12 @@ public class InicioSesionVistaController implements Initializable {
         Stage stage = (Stage) source.getScene().getWindow();    //Me devuelve la ventana donde se encuentra el elemento
         stage.close();
         Stage s = new Stage();
+        
         FXMLLoader fxmlloader = new FXMLLoader(App.class.getResource("VentaPrincipalGaleria.fxml"));
         Parent root = fxmlloader.load();
-        Scene scene = new Scene(root, 700, 560);
+        Scene scene = new Scene(root,950, 600);
         s.setScene(scene);
+        s.setOnCloseRequest(a->App.guardarSerializado());
         s.setTitle("Galeria");
         s.show();
             /*App.setRoot("VentaPrincipalGaleria");*/
